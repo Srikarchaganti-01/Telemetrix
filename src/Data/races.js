@@ -14,6 +14,8 @@ const races = [
     trackTime: "10:00",
     from: "12 Jan",
     to: "15 Jan",
+    lapRecord: "Charles Leclerc (2024)",
+    lapTime: "1:19.813",
   },
 
   {

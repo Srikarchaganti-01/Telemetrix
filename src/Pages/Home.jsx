@@ -14,11 +14,11 @@ function Home() {
     <>
       <Navbar />
       <div className="flex gap-6">
-        <div className="w-2/3">
+        <div className="w-3/5 min-h-fit">
           <Hero />
         </div>
 
-        <div className="w-1/3">
+        <div className="w-2/5 min-h-full">
           <FIAUpdates />
         </div>
       </div>
