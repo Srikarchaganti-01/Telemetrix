@@ -3,4 +3,7 @@
 
 body {
   font-family: "Orbitron", sans-serif;
+  /* background-color: rgb(30, 32, 45); */
+  background: #15151e;
+  color: rgb(207, 207, 207);
 }

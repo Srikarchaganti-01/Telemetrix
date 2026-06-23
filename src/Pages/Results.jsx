@@ -10,7 +10,7 @@ import {
 function Results() {
   return (
     <>
-      <h1 className="text-5xl font-bold underline ">Results page</h1>
+      {/* <h1 className="text-5xl font-bold underline ">Results page</h1> */}
       <Navbar />
       <RaceCard />
       <RaceCard />

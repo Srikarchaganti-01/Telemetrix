@@ -12,7 +12,7 @@ import {
 function Home() {
   return (
     <>
-      <h1 className="text-5xl font-bold underline ">Home page</h1>
+      {/* <h1 className="text-5xl font-bold underline ">Home page</h1> */}
       <Navbar />
       <Hero />
       <PodiumCard />

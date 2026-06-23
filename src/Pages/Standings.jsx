@@ -10,7 +10,7 @@ import {
 function Standings() {
   return (
     <>
-      <h1 className="text-5xl font-bold underline">Standings page</h1>
+      {/* <h1 className="text-5xl font-bold underline">Standings page</h1> */}
       <Navbar />
       <OptionSlider />
       <ConstructorStandings />
