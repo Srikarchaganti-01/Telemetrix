@@ -12,13 +12,16 @@ import {
 function Home() {
   return (
     <>
-      {/* <h1 className="text-5xl font-bold underline ">Home page</h1> */}
       <Navbar />
-      <Hero />
-      <PodiumCard />
-      <FIAUpdates />
-      <OptionSlider />
-      <SeasonStats />
+      <div className="flex gap-6">
+        <div className="w-2/3">
+          <Hero />
+        </div>
+
+        <div className="w-1/3">
+          <FIAUpdates />
+        </div>
+      </div>
       <Footer />
     </>
   );
