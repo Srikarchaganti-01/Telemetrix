@@ -5,5 +5,6 @@ import Profiles from "./Profiles";
 import Results from "./Results";
 import Schedule from "./Schedule";
 import Standings from "./Standings";
+import NotFound from "./NotFound";
 
-export { Admin, H2H, Home, Profiles, Results, Schedule, Standings };
+export { Admin, H2H, Home, Profiles, Results, Schedule, Standings, NotFound };

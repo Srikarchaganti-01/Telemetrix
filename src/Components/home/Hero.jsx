@@ -17,10 +17,6 @@ function Hero() {
     return () => clearInterval(timer);
   }, []);
 
-  console.log(nextRace.raceTime);
-
-  console.log(getCountdown(nextRace.raceTime));
-
   return (
     <section className="min-h-[70vh] flex items-center px-8">
       <div className="flex w-full items-center">

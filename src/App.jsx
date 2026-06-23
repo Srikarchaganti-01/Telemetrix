@@ -7,6 +7,7 @@ import {
   Results,
   Schedule,
   Standings,
+  NotFound,
 } from "./Pages/index";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/profiles" element={<Profiles />} />
         <Route path="/schedule" element={<Schedule />} />
         <Route path="/standings" element={<Standings />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

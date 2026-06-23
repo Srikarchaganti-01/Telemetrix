@@ -35,7 +35,7 @@ function FIAUpdates() {
         <p className="text-gray-400 text-sm">{item.description}</p>
       </div>
 
-      <div className="bg-red-800 px-4 py-3 flex items-center gap-2">
+      <div className="bg-red-900 px-4 py-3 flex items-center gap-2">
         <span className=" italic font-bold">{item.tag}</span>
         <span className="text-sm truncate">{item.title}</span>
       </div>

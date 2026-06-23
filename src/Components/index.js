@@ -20,8 +20,10 @@ import StandingsForm from "./admin/StandingsForm";
 import ComparisonCard from "./h2h/ComparisonCard";
 import DriverSelector from "./h2h/DriverSelector";
 import H2HGraph from "./h2h/H2HGraph";
+import Error404 from "./selector/Error404";
 
 export {
+  Error404,
   Navbar,
   Footer,
   OptionSlider,
