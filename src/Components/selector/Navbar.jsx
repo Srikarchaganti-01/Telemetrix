@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav className="bg-[#090919] text-gray-400  px-8 py-4 mb-5 flex items-center justify-between border-red-700 ">
-      <h1 className="text-2xl font-semibold text-red-600 ">
+    <nav className="bg-[#030112] text-gray-400  px-8 py-4 mb-5 flex items-center justify-between border-red-700 ">
+      <h1 className="italic text-2xl font-semibold text-red-600 ">
         <Link to="/">TelemetriX </Link>
       </h1>
 
