@@ -1,12 +1,12 @@
 const chartData = {
   drivers: [
     {
-      name: "VER",
+      name: "RUS",
       wins: 8,
     },
 
     {
-      name: "NOR",
+      name: "ANT",
       wins: 5,
     },
 
@@ -25,45 +25,83 @@ const chartData = {
     },
 
     {
-      name: "PIA",
+      name: "VER",
       wins: 5,
     },
 
+    {
+      name: "PIA",
+      wins: 3,
+    },
+
+    {
+      name: "NOR",
+      wins: 1,
+    },
     {
       name: "GAS",
-      wins: 3,
-    },
-
-    {
-      name: "RUS",
-      wins: 1,
-    },
-    {
-      name: "ANT",
-      wins: 10,
-    },
-
-    {
-      name: "PER",
-      wins: 5,
-    },
-
-    {
-      name: "BOT",
-      wins: 3,
-    },
-
-    {
-      name: "HUL",
-      wins: 1,
-    },
-    {
-      name: "BOR",
       wins: 10,
     },
 
     {
       name: "COL",
+      wins: 5,
+    },
+
+    {
+      name: "LAW",
+      wins: 3,
+    },
+
+    {
+      name: "LIN",
+      wins: 1,
+    },
+    {
+      name: "OCO",
+      wins: 10,
+    },
+
+    {
+      name: "BEA",
+      wins: 5,
+    },
+
+    {
+      name: "SAI",
+      wins: 3,
+    },
+
+    {
+      name: "ALB",
+      wins: 1,
+    },
+    {
+      name: "HUL",
+      wins: 10,
+    },
+
+    {
+      name: "BOR",
+      wins: 5,
+    },
+
+    {
+      name: "ALO",
+      wins: 3,
+    },
+
+    {
+      name: "STR",
+      wins: 1,
+    },
+    {
+      name: "PER",
+      wins: 10,
+    },
+
+    {
+      name: "BOT",
       wins: 5,
     },
   ],
