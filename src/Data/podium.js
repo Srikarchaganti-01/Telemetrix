@@ -1,7 +1,6 @@
 import VER from "./Drivers/VER.avif";
 import LEC from "./Drivers/LEC.avif";
 import RUS from "./Drivers/RUS.avif";
-
 const podium = {
   circuit: " Circuit de Monaco",
   country: "Monoco",
@@ -16,6 +15,7 @@ const podium = {
       name: "Charles Leclerc",
       team: "Ferrari",
       image: LEC,
+      id: "charles-leclerc",
     },
 
     {
@@ -23,6 +23,7 @@ const podium = {
       name: "Max Verstappen",
       team: "Red Bull",
       image: VER,
+      id: "max-verstappen",
     },
 
     {
@@ -30,6 +31,7 @@ const podium = {
       name: "George Russel",
       team: "Mercedes AMG Petronas",
       image: RUS,
+      id: "george-russel",
     },
   ],
 };

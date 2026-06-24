@@ -4,7 +4,7 @@ import RUS from "./Drivers/RUS.avif";
 
 const driverStandings = [
   {
-    id: 1,
+    id: "george-russel",
     number: 4,
     name: "George Russel",
     team: "Mercedes",
@@ -18,7 +18,7 @@ const driverStandings = [
   },
 
   {
-    id: 2,
+    id: "max-verstappen",
     number: 33,
     name: "Max Verstappen",
     team: "Red Bull Racing",
@@ -31,7 +31,7 @@ const driverStandings = [
     image: VER,
   },
   {
-    id: 3,
+    id: "charles-leclerc",
     number: 16,
     name: "Charles Leclerc",
     team: "Ferrari",

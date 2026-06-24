@@ -1,6 +1,6 @@
 import React from "react";
 import podium from "../../data/podium";
-
+import { Link } from "react-router-dom";
 function PodiumCard() {
   return (
     <div className="bg-[#15151e] text-gray-400 rounded-xl p-6 ml-20 mr-20">
@@ -34,7 +34,11 @@ function PodiumCard() {
                 alt={driver.name}
                 className="w-25 h-25 rounded-full object-cover object-top mb-3"
               />
-              <h2 className="font-semibold text-center">{driver.name}</h2>
+              <h2 className="font-semibold text-center">
+                <Link key={driver.id} to={`/driver/${driver.id}`}>
+                  {driver.name}
+                </Link>
+              </h2>
               <p className="text-sm">{driver.team}</p>
               <span className="mt-2 font-bold">P{driver.place}</span>
             </div>

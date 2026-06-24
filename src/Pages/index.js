@@ -6,5 +6,16 @@ import Results from "./Results";
 import Schedule from "./Schedule";
 import Standings from "./Standings";
 import NotFound from "./NotFound";
+import DriverProfile from "./DriverProfile";
 
-export { Admin, H2H, Home, Profiles, Results, Schedule, Standings, NotFound };
+export {
+  Admin,
+  H2H,
+  DriverProfile,
+  Home,
+  Profiles,
+  Results,
+  Schedule,
+  Standings,
+  NotFound,
+};

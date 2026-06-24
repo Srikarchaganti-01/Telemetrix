@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function StandingCard({ data, type }) {
   const teamColors = {
     Mercedes: "#1bc5aa",
@@ -38,7 +38,6 @@ function StandingCard({ data, type }) {
   };
   return (
     <div className="bg-transparent rounded-2xl px-5 py-1 flex gap-5 items-center">
-      {/* Left image/logo */}
       <div className="flex items-center gap-7">
         <div className="text-xl">P {data.position}</div>
         <div>
@@ -50,16 +49,16 @@ function StandingCard({ data, type }) {
         </div>
       </div>
 
-      {/* Right content */}
       <div className="flex-1">
-        {/* Driver view */}
         {type === "drivers" ? (
           <>
             <div className="flex justify-between ">
               <div className="flex justify-between">
                 <div>
-                  <h2 className="font-bold text-xl">
-                    #{data.number} {data.name}
+                  <h2 className="font-bold text-xl cursor-pointer">
+                    <Link key={data.id} to={`/driver/${data.id}`}>
+                      #{data.number} {data.name}
+                    </Link>
                   </h2>
 
                   <p className="text-gray-400">{data.team}</p>
@@ -79,8 +78,6 @@ function StandingCard({ data, type }) {
             </div>
           </>
         ) : (
-          /* Constructor view */
-
           <>
             <div className="flex justify-between">
               <div className="flex justify-between">

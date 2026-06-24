@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
 function Footer() {
   return (
-    <footer className="bg-[#030112] text-gray-400   px-8 py-8 mt-10">
+    <footer className="bg-[#1c1c24] text-gray-400   px-8 py-8 mt-10">
       <div className="flex justify-between items-start">
         <div>
           <h1 className="font-orbitron text-3xl text-red-600 italic">

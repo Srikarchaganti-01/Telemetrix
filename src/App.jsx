@@ -8,6 +8,7 @@ import {
   Schedule,
   Standings,
   NotFound,
+  DriverProfile,
 } from "./Pages/index";
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
         <Route path="/h2h" element={<H2H />} />
         <Route path="/results" element={<Results />} />
         <Route path="/profiles" element={<Profiles />} />
+        <Route path="/driver/:id" element={<DriverProfile />} />
+        <Route path="/driver/undefined" element={<NotFound />} />
         <Route path="/schedule" element={<Schedule />} />
         <Route path="/standings" element={<Standings />} />
         <Route path="*" element={<NotFound />} />

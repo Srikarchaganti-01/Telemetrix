@@ -10,8 +10,6 @@ import StandingCard from "./standings/StandingCard";
 import RecordCard from "./results/RecordCard";
 import ResultsTable from "./results/ResultsTable";
 import DriverCard from "./profile/DriverCard";
-import DriverHero from "./profile/DriverHero";
-import DriverStats from "./profile/DriverStats";
 import LoginForm from "./admin/LoginForm";
 import NewsForm from "./admin/NewsForm";
 import StandingsForm from "./admin/StandingsForm";
@@ -34,8 +32,6 @@ export {
   RecordCard,
   ResultsTable,
   DriverCard,
-  DriverHero,
-  DriverStats,
   LoginForm,
   NewsForm,
   StandingsForm,
