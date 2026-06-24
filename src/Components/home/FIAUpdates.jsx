@@ -20,7 +20,7 @@ function FIAUpdates() {
     <div
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
-      className="w-full bg-zinc-900 rounded-xl overflow-hidden shadow-lg min-h-full flex flex-col justify-between"
+      className="w-full bg-zinc-900 rounded-xl overflow-hidden shadow-lg min-h-full flex flex-col justify-between flex-1"
     >
       <div className="h-70">
         <img

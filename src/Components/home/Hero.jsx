@@ -18,8 +18,8 @@ function Hero() {
   }, []);
 
   return (
-    <section className="min-h-[70vh] flex items-center px-8">
-      <div className="flex w-full items-center">
+    <section className="min-h-[70vh] flex items-center px-8 flex-1">
+      <div className="flex w-full items-center flex-1">
         <div className="w-1/2">
           <p className="text-red-900 font-semibold mb-3">NEXT RACE</p>
 
@@ -66,7 +66,7 @@ function Hero() {
           </div>
         </div>
 
-        <div className="w-1/2  h-full flex flex-col justify-between items-start gap-5">
+        <div className="w-1/2  h-full flex flex-col justify-between items-start gap-5 flex-1">
           <div className="min-h-1/2 min-w-100  shadow-2xl bg-center bg-cover ">
             <img
               src={nextRace.image}

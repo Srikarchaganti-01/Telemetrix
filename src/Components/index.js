@@ -6,7 +6,6 @@ import FIAUpdates from "./home/FIAUpdates";
 import PodiumCard from "./home/PodiumCard";
 import SeasonStats from "./home/SeasonStats";
 import RaceCard from "./schedule/RaceCard";
-import RaceStatus from "./schedule/RaceStatus";
 import DriverStandings from "./standings/DriverStandings";
 import ConstructorStandings from "./standings/ConstructorStandings";
 import RecordCard from "./results/RecordCard";
@@ -32,7 +31,6 @@ export {
   PodiumCard,
   SeasonStats,
   RaceCard,
-  RaceStatus,
   DriverStandings,
   ConstructorStandings,
   RecordCard,
