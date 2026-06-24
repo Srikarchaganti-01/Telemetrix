@@ -74,7 +74,7 @@ function Footer() {
       <div className="m-10 mb-5 flex justify-evenly align-middle ">
         <Link
           to="https://www.formula1.com/"
-          className="bg-[#C9C8F8] text-black rounded-2xl px-6 py-5 flex justify-between items-center w-50 hover:scale-105 transition"
+          className="bg-[#c2c4f5] text-black rounded-2xl px-6 py-5 flex justify-between items-center w-50 hover:scale-105 transition"
         >
           <h2 className="font-medium text-sm uppercase">F1.com</h2>
 
@@ -83,7 +83,7 @@ function Footer() {
 
         <Link
           to="https://www.fiaformula2.com/"
-          className="bg-[#C9C8F8] text-black rounded-2xl px-6 py-5 flex justify-between items-center min-w-50 hover:scale-105 transition"
+          className="bg-[#c2c4f5] text-black rounded-2xl px-6 py-5 flex justify-between items-center min-w-50 hover:scale-105 transition"
         >
           <h2 className="font-medium text-sm uppercase">FIA F2.com</h2>
 
@@ -92,7 +92,7 @@ function Footer() {
 
         <Link
           to="https://www.fiaformula3.com/"
-          className="bg-[#C9C8F8] text-black rounded-2xl px-6 py-5 flex justify-between items-center min-w-50 hover:scale-105 transition"
+          className="bg-[#c2c4f5] text-black rounded-2xl px-6 py-5 flex justify-between items-center min-w-50 hover:scale-105 transition"
         >
           <h2 className="font-medium text-sm uppercase">FIA F3.com</h2>
 
@@ -101,7 +101,7 @@ function Footer() {
 
         <Link
           to="https://www.f1academy.com/"
-          className="bg-[#C9C8F8] text-black rounded-2xl px-6 py-5 flex justify-between items-center min-w-50 hover:scale-105 transition"
+          className="bg-[#c2c4f5] text-black rounded-2xl px-6 py-5 flex justify-between items-center min-w-50 hover:scale-105 transition"
         >
           <h2 className="font-medium text-sm uppercase">F1 Academy</h2>
 
@@ -110,7 +110,7 @@ function Footer() {
 
         <Link
           to="https://www.formula1.com/en/page/2026-f1-regulations"
-          className="bg-[#C9C8F8] text-black rounded-2xl px-6 py-5 flex justify-between items-center min-w-60 hover:scale-105 transition"
+          className="bg-[#c2c4f5] text-black rounded-2xl px-6 py-5 flex justify-between items-center min-w-60 hover:scale-105 transition"
         >
           <h2 className="font-medium text-sm uppercase">2026 Regulations</h2>
 

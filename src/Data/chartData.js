@@ -1,76 +1,76 @@
 const chartData = {
   drivers: [
     {
-      name: "Verstappen",
+      name: "VER",
       wins: 8,
     },
 
     {
-      name: "Norris",
+      name: "NOR",
       wins: 5,
     },
 
     {
-      name: "Leclerc",
+      name: "LEC",
       wins: 3,
     },
 
     {
-      name: "Hamilton",
+      name: "HAM",
       wins: 2,
     },
     {
-      name: "Red Bull",
+      name: "HAD",
       wins: 10,
     },
 
     {
-      name: "McLaren",
+      name: "PIA",
       wins: 5,
     },
 
     {
-      name: "Ferrari",
+      name: "GAS",
       wins: 3,
     },
 
     {
-      name: "Mercedes",
+      name: "RUS",
       wins: 1,
     },
     {
-      name: "Haas",
+      name: "ANT",
       wins: 10,
     },
 
     {
-      name: "Racing bulls",
+      name: "PER",
       wins: 5,
     },
 
     {
-      name: "Alpine",
+      name: "BOT",
       wins: 3,
     },
 
     {
-      name: "Aston martin`",
+      name: "HUL",
       wins: 1,
     },
     {
-      name: "Cadillac",
+      name: "BOR",
       wins: 10,
     },
 
     {
-      name: "Audi",
+      name: "COL",
       wins: 5,
     },
   ],
 
   teams: [
     {
-      name: "Red Bull",
+      name: "RedBull",
       wins: 10,
     },
 
@@ -89,12 +89,12 @@ const chartData = {
       wins: 1,
     },
     {
-      name: "Haas",
+      name: "Williams",
       wins: 10,
     },
 
     {
-      name: "Racing bulls",
+      name: "RacingBulls",
       wins: 5,
     },
 
@@ -104,7 +104,7 @@ const chartData = {
     },
 
     {
-      name: "Aston martin`",
+      name: "AstonMartin",
       wins: 1,
     },
     {
@@ -114,6 +114,10 @@ const chartData = {
 
     {
       name: "Audi",
+      wins: 5,
+    },
+    {
+      name: "Haas",
       wins: 5,
     },
   ],
