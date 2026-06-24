@@ -11,26 +11,20 @@ function Schedule() {
   return (
     <>
       <Navbar />
+      <div className="text-4xl ml-10 mb-5 mt-10">
+        2026 FIA Formula One World Championship™{" "}
+      </div>
+      <div className="text-3xl ml-10 italic text-red-900">
+        Race Calendar 2026
+      </div>
       <div className="w-full px-6 py-4 text-gray">
-        {/* Option Slider */}
-        <div className="flex justify-end">
-          <div className="flex bg-[#1e1e1e] p-1 rounded-full w-fit">
-            {options.map((opt) => (
-              <button
-                key={opt}
-                onClick={() => setSelected(opt)}
-                className={`px-6 py-2 text-sm font-semibold rounded-full transition-all duration-200 ${
-                  selected === opt
-                    ? "bg-red-900 text-white"
-                    : "text-gray-400 hover:text-white"
-                }`}
-              >
-                {opt}
-              </button>
-            ))}
-          </div>
+        <div className="flex justify-end mb-8">
+          <OptionSlider
+            options={options}
+            selected={selected}
+            setSelected={setSelected}
+          />
         </div>
-
         <div className="mt-6  w-full grid grid-cols-2  gap-5  ">
           {scheduleData.map((race) => (
             <RaceCard key={race.id} race={race} />
