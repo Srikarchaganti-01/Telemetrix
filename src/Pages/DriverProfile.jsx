@@ -23,12 +23,12 @@ function DriverProfile() {
             <div className="flex  items-center gap-10">
               <div>
                 <h6 className="text-sm text-red-900">Date of Birth : </h6>
-                <h1 className="text-3xl text-gray-400">30/09/1997</h1>
+                <h1 className="text-3xl text-gray-400">{driver.DOB} </h1>
               </div>
               <div>
                 <div>
                   <h6 className="text-sm text-red-900">Place of Birth : </h6>
-                  <h1 className="text-3xl text-gray-400">Hasselt, Belgium</h1>
+                  <h1 className="text-3xl text-gray-400">{driver.POB} </h1>
                 </div>
               </div>
             </div>
@@ -36,7 +36,7 @@ function DriverProfile() {
               <div className="text-4xl text-red-900 font-bold mt-20 mb-10">
                 2026 SEASON STATICS
               </div>
-              <div className="flex gap-20 text-gray-300 text-3xl mb-8">
+              <div className="flex gap-20 text-gray-300 text-3xl mb-5">
                 <span>Season Position : {driver.spos}</span>
                 <span>Season points : {driver.spts}</span>
               </div>

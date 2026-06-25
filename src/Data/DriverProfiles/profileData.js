@@ -35,6 +35,8 @@ const drivers = [
     CDNF: 35,
     quote: "I HATE LOSING",
     teamColor: "#295594",
+    DOB: "30/09/1997",
+    POB: "Hasselt, Belgium",
   },
   {
     id: "charles-leclerc",
@@ -63,6 +65,8 @@ const drivers = [
     teamColor: "#b00022",
     quote:
       "WHATEVER THE POSITION IS AT STAKE, YOU'VE GOT TO DO YOUR ABSOLUTE BEST AS A DRIVER WHETHER YOU'RE FIGHTING FOR THE FIFTH, FOURTH OR FIRST POSITION.",
+    DOB: "16/10/1997",
+    POB: "Monte Carlo, Monaco",
   },
 ];
 

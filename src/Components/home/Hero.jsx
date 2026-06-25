@@ -76,7 +76,7 @@ function Hero() {
           </div>
           <div className="min-h-2/5 min-w-100  flex flex-col items-start justify-between">
             <h1 className="text-red-900 text-3xl">Round no : {nextRace.id}</h1>
-            <div className="flex flex-col gap-1 text-base">
+            <div className="flex flex-col gap-1 text-base text-gray-400">
               <h2>
                 {nextRace.from} - {nextRace.to}
               </h2>
