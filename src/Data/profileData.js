@@ -6,7 +6,9 @@ import {
   VER_lat,
   LEC_ban,
   LEC_lat,
-} from "../../Data/Drivers";
+  RUS_ban,
+  RUS_lat,
+} from "./Drivers";
 
 const drivers = [
   {
@@ -14,7 +16,6 @@ const drivers = [
     name: "Max Verstappen",
     number: 33,
     team: "Red Bull",
-    points: 185,
     img: VER,
     image: VER_ban,
     latest: VER_lat,
@@ -43,7 +44,6 @@ const drivers = [
     name: "Charles Leclerc",
     number: 16,
     team: "Ferrari",
-    points: 176,
     img: LEC,
     image: LEC_ban,
     latest: LEC_lat,
@@ -67,6 +67,34 @@ const drivers = [
       "WHATEVER THE POSITION IS AT STAKE, YOU'VE GOT TO DO YOUR ABSOLUTE BEST AS A DRIVER WHETHER YOU'RE FIGHTING FOR THE FIFTH, FOURTH OR FIRST POSITION.",
     DOB: "16/10/1997",
     POB: "Monte Carlo, Monaco",
+  },
+  {
+    id: "george-russel",
+    name: "George Russel",
+    number: 63,
+    team: "Mercedes",
+    img: RUS,
+    image: RUS_ban,
+    latest: RUS_lat,
+    spos: 3,
+    spts: 106,
+    sgpRace: 7,
+    sgpPts: 85,
+    sgpWins: 1,
+    sgpPodiums: 3,
+    DHLF: 0,
+    DNF: 1,
+    Ctot: 159,
+    Ccp: 1139,
+    Cwins: 6,
+    Cpod: 27,
+    Cpol: 11,
+    titles: 0,
+    CDNF: 25,
+    teamColor: "#1bc5aa",
+    quote: "“If in doubt, go flat out”.",
+    DOB: "15/02/1998",
+    POB: "King's Lynn, England",
   },
 ];
 

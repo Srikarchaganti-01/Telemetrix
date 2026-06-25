@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import drivers from "../Data/DriverProfiles/profileData";
+import drivers from "../Data/profileData";
 import { Navbar, Footer } from "../Components";
 
 function DriverProfile() {
@@ -55,7 +55,7 @@ function DriverProfile() {
             <img
               src={driver.image}
               alt="driver.name"
-              className="w-120 h-120 object-cover object-top rounded-4xl shadow-2xl"
+              className="w-full h-full object-cover object-top rounded-4xl shadow-2xl"
             />
           </div>
         </div>

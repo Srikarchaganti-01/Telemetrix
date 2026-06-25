@@ -1,5 +1,5 @@
 import React from "react";
-import drivers from "../Data/DriverProfiles/profileData";
+import drivers from "../Data/profileData";
 import { Navbar, DriverCard, Footer } from "../Components";
 import {
   LEC,
