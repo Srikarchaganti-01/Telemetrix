@@ -7,7 +7,7 @@ import Schedule from "./Schedule";
 import Standings from "./Standings";
 import NotFound from "./NotFound";
 import DriverProfile from "./DriverProfile";
-
+import Test from "./Test";
 export {
   Admin,
   H2H,
@@ -18,4 +18,5 @@ export {
   Schedule,
   Standings,
   NotFound,
+  Test,
 };

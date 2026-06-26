@@ -9,6 +9,7 @@ import {
   Standings,
   NotFound,
   DriverProfile,
+  Test,
 } from "./Pages/index";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/test" element={<Test />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/h2h" element={<H2H />} />
         <Route path="/results" element={<Results />} />
