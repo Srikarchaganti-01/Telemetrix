@@ -22,7 +22,7 @@ function App() {
         <Route path="/h2h" element={<H2H />} />
         <Route path="/results" element={<Results />} />
         <Route path="/profiles" element={<Profiles />} />
-        <Route path="/driver/:id" element={<DriverProfile />} />
+        <Route path="/driver/:shortName" element={<DriverProfile />} />
         <Route path="/driver/undefined" element={<NotFound />} />
         <Route path="/schedule" element={<Schedule />} />
         <Route path="/standings" element={<Standings />} />

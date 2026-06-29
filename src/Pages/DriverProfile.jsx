@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import drivers from "../Data/profileData";
 import { Navbar, Footer } from "../Components";
+import { getDriver } from "../services/driverService";
 
 function DriverProfile() {
-  const { id } = useParams();
+  const { shortName } = useParams();
+  const [loading, setLoading] = useState(true);
+  const [driver, setDriver] = useState(null);
+  useEffect(() => {
+    async function fetchDriver() {
+      const data = await getDriver(shortName);
+      setDriver(data);
+      setLoading(false);
+    }
 
-  const driver = drivers.find((item) => item.id === id);
+    fetchDriver();
+  }, [shortName]);
 
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+  console.log(driver.ban);
   return (
     <>
       <Navbar />
@@ -23,12 +36,12 @@ function DriverProfile() {
             <div className="flex  items-center gap-10">
               <div>
                 <h6 className="text-sm text-red-900">Date of Birth : </h6>
-                <h1 className="text-3xl text-gray-400">{driver.DOB} </h1>
+                <h1 className="text-3xl text-gray-400">{driver.dob} </h1>
               </div>
               <div>
                 <div>
                   <h6 className="text-sm text-red-900">Place of Birth : </h6>
-                  <h1 className="text-3xl text-gray-400">{driver.POB} </h1>
+                  <h1 className="text-3xl text-gray-400">{driver.pob} </h1>
                 </div>
               </div>
             </div>
@@ -37,24 +50,24 @@ function DriverProfile() {
                 2026 SEASON STATICS
               </div>
               <div className="flex gap-20 text-gray-300 text-3xl mb-5">
-                <span>Season Position : {driver.spos}</span>
-                <span>Season points : {driver.spts}</span>
+                <span>Season Position : {driver.Spos}</span>
+                <span>Season points : {driver.Spts}</span>
               </div>
               <div className="flex gap-1.5 text-gray-400 text-2xl flex-col">
-                <span>Season GP Races : {driver.sgpRace}</span>
-                <span>Season GP points : {driver.sgpPts}</span>
-                <span>Season Wins : {driver.sgpWins}</span>
-                <span>Season Podiums : {driver.sgpPodiums}</span>
-                <span>DHL Fastest Lap's : {driver.DHLF}</span>
-                <span>Season DNF's : {driver.DNF}</span>
+                <span>Season GP Races : {driver.Sgp}</span>
+                <span>Season GP points : {driver.Sgppts}</span>
+                <span>Season Wins : {driver.Swins}</span>
+                <span>Season Podiums : {driver.Spodiums}</span>
+                <span>DHL Fastest Lap's : {driver.Sdhl}</span>
+                <span>Season DNF's : {driver.Sdnf}</span>
               </div>
             </div>
           </div>
 
-          <div className="w-1/3 font-extralight flex-end">
+          <div className="w-2/5 font-extralight flex-end">
             <img
-              src={driver.image}
-              alt="driver.name"
+              src={driver.ban}
+              alt={driver.name}
               className="w-full h-full object-cover object-top rounded-4xl shadow-2xl"
             />
           </div>
@@ -71,10 +84,10 @@ function DriverProfile() {
           <div className="flex flex-col justify-baseline font-bold">
             <span className="text-5xl text-red-900 mb-10">CAREER STATS</span>
             <span className="text-3xl text-gray-400 mb-3 font-extralight">
-              Total Races : {driver.Ctot}
+              Total Races : {driver.Cgp}
             </span>
             <span className="text-3xl text-gray-400 mb-3 font-extralight">
-              Total Points : {driver.Ccp}
+              Total Points : {driver.Cpts}
             </span>
             <span className="text-3xl text-gray-400 mb-3 font-extralight">
               Race Wins : {driver.Cwins}
@@ -83,13 +96,13 @@ function DriverProfile() {
               Podiums : {driver.Cpod}
             </span>
             <span className="text-3xl text-gray-400 mb-3 font-extralight">
-              Pole Positions : {driver.Cpol}
+              Pole Positions : {driver.Cpole}
             </span>
             <span className="text-3xl text-gray-400 mb-3 font-extralight">
-              World Championships : {driver.titles}
+              World Championships : {driver.Ctitles}
             </span>
             <span className="text-3xl text-gray-400 mb-3 font-extralight">
-              DNF's : {driver.CDNF}
+              DNF's : {driver.Cdnf}
             </span>
           </div>
         </div>
