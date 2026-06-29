@@ -1,4 +1,6 @@
-import { useState } from "react";
+import React from "react";
+import { useEffect, useState } from "react";
+import { getData } from "../../services/dataService";
 import OptionSlider from "../selector/OptionSlider";
 import chartData from "../../data/chartData";
 import { Bar } from "react-chartjs-2";
@@ -10,14 +12,32 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
 function SeasonStats() {
   const [selected, setSelected] = useState("Drivers");
+  const [constructorStandings, setConstructorStandings] = useState([]);
+  const [driverStandings, setDriverStandings] = useState([]);
   const options = ["Drivers", "Teams"];
-  const currentData = [
-    ...(selected === "Drivers" ? chartData.drivers : chartData.teams),
-  ].sort((a, b) => b.wins - a.wins);
+  useEffect(() => {
+    async function fetchData() {
+      const teams = await getData("teams");
+      const drivers = await getData("drivers");
+      const sortedTeams = [...teams].sort(
+        (a, b) => Number(b.Spts) - Number(a.Spts),
+      );
+      const sortedDrivers = [...drivers].sort(
+        (a, b) => Number(a.Spos) - Number(b.Spos),
+      );
+      setConstructorStandings(sortedTeams);
+      setDriverStandings(sortedDrivers);
+    }
+    fetchData();
+  }, []);
+
+  const currentData =
+    selected === "Drivers" ? driverStandings : constructorStandings;
   const teamColors = {
     Mercedes: "#1bc5aa",
     Ferrari: "#b00022",
@@ -54,13 +74,13 @@ function SeasonStats() {
     BOT: "#8a8a8c",
   };
   const data = {
-    labels: currentData.map((item) => item.name),
+    labels: currentData.map((item) => item.shortName),
     datasets: [
       {
         label: "Wins",
-        data: currentData.map((item) => item.wins),
+        data: currentData.map((item) => item.Spts),
         backgroundColor: currentData.map(
-          (item) => teamColors[item.name] || "#000000",
+          (item) => teamColors[item.shortName] || "#000000",
         ),
         borderRadius: 5,
       },

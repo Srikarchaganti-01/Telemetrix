@@ -9,7 +9,7 @@ const races = [
     circuitLength: "10km",
     totalLaps: "67",
     raceTime: "2026-09-15T14:00:00+05:30",
-    image: aus,
+    image: Melbourne,
     myTime: "14:00",
     trackTime: "10:00",
     from: "12 Jan",

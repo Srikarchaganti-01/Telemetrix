@@ -1,15 +1,8 @@
 import React from "react";
-import drivers from "../Data/profileData";
+import { useEffect, useState } from "react";
+import { getData } from "../services/dataService";
 import { Navbar, DriverCard, Footer } from "../Components";
-import {
-  LEC,
-  VER,
-  RUS,
-  VER_ban,
-  VER_lat,
-  LEC_lat,
-  LEC_ban,
-} from "../Data/Drivers/index";
+import drivers from "../Data/profileData";
 function Profiles() {
   return (
     <>

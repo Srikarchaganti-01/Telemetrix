@@ -67,7 +67,7 @@ function Hero() {
         </div>
 
         <div className="w-1/2  h-full flex flex-col justify-between items-start gap-5 flex-1">
-          <div className="min-h-1/2 min-w-100  shadow-2xl bg-center bg-cover ">
+          <div className="grayscale bg-center bg-cover ">
             <img
               src={nextRace.image}
               alt="Melbourne"
