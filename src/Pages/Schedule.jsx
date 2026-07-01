@@ -1,17 +1,34 @@
 import React from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getSchedule } from "../services/scheduleService";
 import { Navbar, OptionSlider, RaceCard, Footer } from "../Components";
-import scheduleData from "../Data/schedule";
+// import scheduleData from "../Data/schedule";
 
 function Schedule() {
   const [selected, setSelected] = useState("All");
+  const [scheduleData, setScheduleData] = useState([]);
   const options = ["All", "Past", "Upcoming"];
-  const filteredRaces =
-    selected === "All"
-      ? scheduleData
-      : scheduleData.filter((race) =>
-          selected === "Past" ? race.status === true : race.status === false,
-        );
+  const [filteredRaces, setFilteredRaces] = useState([]);
+
+  useEffect(() => {
+    async function fetchSchedule() {
+      const data = await getSchedule();
+      console.log("Raw data:", data);
+      const races =
+        selected === "All"
+          ? data
+          : data.filter((race) =>
+              selected === "Past"
+                ? race.status === true
+                : race.status === false,
+            );
+
+      console.log("Filtered:", races);
+      setFilteredRaces(races);
+    }
+
+    fetchSchedule();
+  }, [selected]);
   return (
     <>
       <Navbar />
@@ -34,7 +51,7 @@ function Schedule() {
 
         <div className="mt-6  w-full grid grid-cols-2  gap-5  ">
           {filteredRaces.map((race) => (
-            <RaceCard key={race.id} race={race} />
+            <RaceCard key={race.roundNo} race={race} />
           ))}
         </div>
       </div>

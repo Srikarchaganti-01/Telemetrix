@@ -1,9 +1,12 @@
 export function getCountdown(raceTime) {
   const now = new Date().getTime();
 
-  const raceDate = new Date(raceTime).getTime();
+  const raceDate = new Date(raceTime);
 
-  const difference = raceDate - now;
+  raceDate.setHours(raceDate.getHours() - 5);
+  raceDate.setMinutes(raceDate.getMinutes() - 30);
+
+  const difference = raceDate.getTime() - now;
 
   if (difference <= 0) {
     return {
@@ -15,11 +18,8 @@ export function getCountdown(raceTime) {
   }
 
   const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-
   const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-
   const minutes = Math.floor((difference / (1000 * 60)) % 60);
-
   const seconds = Math.floor((difference / 1000) % 60);
 
   return {

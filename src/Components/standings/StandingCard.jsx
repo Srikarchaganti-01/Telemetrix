@@ -31,7 +31,7 @@ function StandingCard({ data, type }) {
 
               <div className="flex gap-6 mt-4">
                 <p>Wins: {data.Swins}</p>
-                <p>Podiums: {data.Spod}</p>
+                <p>Podiums: {data.Spodiums}</p>
                 <p>Pts: {data.Spts}</p>
               </div>
             </div>
