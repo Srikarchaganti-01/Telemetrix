@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { SessionRecord } from "../Data/results";
 import { getData } from "../services/dataService";
 import {
   Navbar,
