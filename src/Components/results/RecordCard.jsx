@@ -1,12 +1,21 @@
-import React from "react";
-import drivers from "../../Data/profileData";
+import React, { useEffect, useState } from "react";
+import { getDriver } from "../../services/driverService";
 import { Link } from "react-router-dom";
-const driverMap = Object.fromEntries(
-  drivers.map((driver) => [driver.id, driver]),
-);
 
 function RecordCard({ record }) {
-  const driver = driverMap[record.id];
+  const [driver, setDriver] = useState(null);
+
+  useEffect(() => {
+    async function fetchDriver() {
+      const data = await getDriver(record.driver_id);
+      setDriver(data);
+    }
+
+    fetchDriver();
+  }, [record.driver_id]);
+  if (!driver) return <div>Loading...</div>;
+  // console.log(record);
+  // console.log(driver);
   return (
     <div className="w-full">
       <div
@@ -15,7 +24,7 @@ function RecordCard({ record }) {
       >
         <div className="w-full flex justify-center items-center h-7/10  rounded-3xl">
           <img
-            src={driver.image}
+            src={driver.ban}
             alt={driver.name}
             className="w-full h-full object-cover object-top rounded-xl "
           />
@@ -27,7 +36,7 @@ function RecordCard({ record }) {
           <span className="text-xl">{driver.name}</span>
 
           <span className="text-xl">
-            {record.prop}: {record.rec}
+            {record.prop}: {record.value}
           </span>
         </div>
       </div>

@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { SessionRecord } from "../Data/results";
+import { getData } from "../services/dataService";
 import {
   Navbar,
   RecordCard,
@@ -6,30 +8,44 @@ import {
   ResultsTable,
   Footer,
 } from "../Components";
-import { SessionData, SessionRecord } from "../Data/results";
-function Results() {
-  const [selected, setSelected] = useState("Race");
-  const options = [
-    "FP-1",
-    "FP-2",
-    "FP-3",
-    "Sp-Quali",
-    "Sp-Race",
-    "Quali",
-    "Race",
-  ];
-  const sessionMap = {
-    "FP-1": SessionData.fp1,
-    "FP-2": SessionData.fp2,
-    "FP-3": SessionData.fp3,
-    "Sp-Quali": SessionData.sprintQuali,
-    "Sp-Race": SessionData.sprintRace,
-    Quali: SessionData.qualifying,
-    Race: SessionData.raceResults,
-  };
-  const filteredData = sessionMap[selected];
-  console.log(filteredData);
 
+function Results() {
+  const [results, setResults] = useState([]);
+  const [records, setRecords] = useState([]);
+  useEffect(() => {
+    async function fetchResults() {
+      const sessionData = await getData("session_results");
+      setResults(sessionData);
+
+      const recordData = await getData("session_records");
+      setRecords(recordData);
+    }
+
+    fetchResults();
+  }, []);
+  const [selected, setSelected] = useState("Race");
+  // const options = [
+  //   "FP-1",
+  //   "FP-2",
+  //   "FP-3",
+  //   "Sp-Quali",
+  //   "Sp-Race",
+  //   "Quali",
+  //   "Race",
+  // ];
+  const formatMap = {
+    "FP-1": "fp1",
+    "FP-2": "fp2",
+    "FP-3": "fp3",
+    Quali: "quali",
+    Race: "race",
+  };
+
+  const filteredData = results.filter(
+    (result) => result.format === formatMap[selected],
+  );
+
+  // console.log(filteredData);
   return (
     <>
       <Navbar />
@@ -38,22 +54,22 @@ function Results() {
       </div>
       <div className="text-3xl ml-10 mb-5 text-red-900">Session Results</div>
       <div className="max-w-full flex flex-1 justify-between gap-20 m-10">
-        {SessionRecord.map((record) => (
-          <RecordCard key={record.id} record={record} />
+        {records.map((record) => (
+          <RecordCard key={record.$id} record={record} />
         ))}
       </div>
-      <div className="w-full px-6 py-4 text-gray">
-        <div className="flex justify-end mb-8">
+      <div className="w-full px-6 py-4 text-gray ">
+        {/* <div className="flex justify-end mb-8">
           <OptionSlider
             options={options}
             selected={selected}
             setSelected={setSelected}
           />
-        </div>
-
+        </div> */}
+        <span className="text-4xl">Race Results :</span>
         <div className="mt-6  w-full  gap-5  ">
           {filteredData.map((result) => (
-            <ResultsTable key={result.id} result={result} />
+            <ResultsTable key={result.driver_id} result={result} />
           ))}
         </div>
       </div>
