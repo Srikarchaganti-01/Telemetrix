@@ -58,7 +58,6 @@ function DriverProfile() {
                 <span>Season GP points : {driver.Sgppts}</span>
                 <span>Season Wins : {driver.Swins}</span>
                 <span>Season Podiums : {driver.Spodiums}</span>
-                <span>DHL Fastest Lap's : {driver.Sdhl}</span>
                 <span>Season DNF's : {driver.Sdnf}</span>
               </div>
             </div>

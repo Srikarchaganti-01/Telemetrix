@@ -14,6 +14,9 @@ import LoginForm from "./admin/LoginForm";
 import NewsForm from "./admin/NewsForm";
 import StandingsForm from "./admin/StandingsForm";
 import Error404 from "./selector/Error404";
+import LogoutButton from "./admin/LogoutButton";
+import RecordsForm from "./admin/RecordsForm";
+import ResultsForm from "./admin/ResultsForm";
 export {
   Error404,
   Navbar,
@@ -29,6 +32,9 @@ export {
   ResultsTable,
   DriverCard,
   LoginForm,
+  LogoutButton,
   NewsForm,
   StandingsForm,
+  RecordsForm,
+  ResultsForm,
 };

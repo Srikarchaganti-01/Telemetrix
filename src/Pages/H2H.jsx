@@ -120,7 +120,6 @@ function H2H() {
           selectedDrivers.driver1.Cpole,
           selectedDrivers.driver1.Ctitles,
           selectedDrivers.driver1.Cdnf,
-          selectedDrivers.driver1.Sdhl,
         ],
         borderColor: teamColors[selectedDrivers.driver1.shortName],
         backgroundColor: teamColors[selectedDrivers.driver1.shortName],
@@ -142,7 +141,6 @@ function H2H() {
           selectedDrivers.driver2.Cpole,
           selectedDrivers.driver2.Ctitles,
           selectedDrivers.driver2.Cdnf,
-          selectedDrivers.driver2.Sdhl,
         ],
         borderColor: teamColors[selectedDrivers.driver2.shortName],
         backgroundColor: teamColors[selectedDrivers.driver2.shortName],
@@ -288,7 +286,6 @@ function DriverCard({ driver }) {
           <span>Season GP points : {driver.Sgppts}</span>
           <span>Season Wins : {driver.Swins}</span>
           <span>Season Podiums : {driver.Spodiums}</span>
-          <span>DHL Fastest Lap's : {driver.Sdhl}</span>
           <span>Season DNF's : {driver.Sdnf}</span>
         </div>
       </div>
