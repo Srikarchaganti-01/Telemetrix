@@ -235,7 +235,8 @@ git push origin feature/your-feature
 
 ## 📄 License
 
-This project currently does not have a license. If you intend others to freely use, modify, or contribute to the project, consider adding the MIT License.
+This project is licensed under the MIT License. See the LICENSE file for details.
+
 
 ---
 
