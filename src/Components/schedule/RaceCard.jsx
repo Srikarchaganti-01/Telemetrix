@@ -28,9 +28,9 @@ function RaceCard({ race }) {
         <div
           className={`${race.status ? "" : "grayscale opacity-0"} flex flex-col gap-0.5`}
         >
-          <p className="text-sm text-gray-400">P 1 : {race.p1}</p>
-          <p className="text-sm text-gray-400">P2 : {race.p2}</p>
-          <p className="text-sm text-gray-400">P3 : {race.p3}</p>
+          <p className="text-sm text-gray-400">P 1 : {race.POS1}</p>
+          <p className="text-sm text-gray-400">P2 : {race.POS2}</p>
+          <p className="text-sm text-gray-400">P3 : {race.POS3}</p>
         </div>
       </div>
     </div>

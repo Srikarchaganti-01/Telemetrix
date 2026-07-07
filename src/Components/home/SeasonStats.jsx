@@ -77,7 +77,7 @@ function SeasonStats() {
     labels: currentData.map((item) => item.shortName),
     datasets: [
       {
-        label: "Wins",
+        label: "Season Points",
         data: currentData.map((item) => item.Spts),
         backgroundColor: currentData.map(
           (item) => teamColors[item.shortName] || "#000000",

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Navbar, Footer } from "../Components";
+import { Navbar, Footer, Loader } from "../Components";
 import { getDriver } from "../services/driverService";
 
 function DriverProfile() {
@@ -18,7 +18,7 @@ function DriverProfile() {
   }, [shortName]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
   console.log(driver.ban);
   return (

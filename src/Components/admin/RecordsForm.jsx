@@ -60,7 +60,7 @@ function RecordsForm() {
             className="bg-zinc-800 p-3 rounded-lg text-gray-400 outline-none"
           >
             <option>DHL Fastest Lap</option>
-            <option>Driver Of The Day</option>
+            <option>Driver_id Of The Day</option>
             <option>Speed Master</option>
           </select>
 

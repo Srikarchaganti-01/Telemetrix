@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import {
   Navbar,
   Hero,
@@ -7,11 +8,21 @@ import {
   SeasonStats,
   OptionSlider,
   Footer,
+  Loader,
 } from "../Components";
 
 function Home() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+  }, []);
   return (
     <>
+      {loading && <Loader />}
+
       <Navbar />
       <div className="flex flex-col gap-5">
         <div className="text-4xl ml-10 my-5">

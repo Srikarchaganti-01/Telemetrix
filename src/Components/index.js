@@ -17,6 +17,7 @@ import Error404 from "./selector/Error404";
 import LogoutButton from "./admin/LogoutButton";
 import RecordsForm from "./admin/RecordsForm";
 import ResultsForm from "./admin/ResultsForm";
+import Loader from "./selector/Loader";
 export {
   Error404,
   Navbar,
@@ -37,4 +38,5 @@ export {
   StandingsForm,
   RecordsForm,
   ResultsForm,
+  Loader,
 };
