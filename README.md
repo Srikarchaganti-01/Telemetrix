@@ -186,23 +186,32 @@ Formula 1 datasets are used to populate and maintain race information, standings
 
 ---
 
-## 🎯 Roadmap (Version 2)
+## 🚀 Roadmap
 
-Planned improvements include:
+### Version 2
+- [ ] Full mobile responsiveness
+- [ ] Complete Formula 1 weekend coverage
+  - [ ] Practice 1
+  - [ ] Practice 2
+  - [ ] Practice 3
+  - [ ] Sprint Qualifying
+  - [ ] Sprint Race
+  - [ ] Qualifying
+  - [ ] Grand Prix
+- [ ] Dedicated session result pages
+- [ ] Improved data visualizations
+- [ ] Faster loading and optimized performance
+- [ ] UI/UX refinements
+- [ ] Enhanced driver and constructor analytics
 
-* Full responsive support for all devices
-* Enhanced mobile UI
-* Complete session results
-
-  * FP1
-  * FP2
-  * FP3
-  * Sprint Qualifying
-  * Sprint Race
-  * Qualifying
-  * Grand Prix
-* Additional analytics and visualizations
-* UI refinements and performance improvements
+### Future Ideas
+- [ ] Driver season progression graphs
+- [ ] Team performance analytics
+- [ ] Circuit information pages
+- [ ] Championship simulator
+- [ ] Advanced search
+- [ ] Dark mode
+- [ ] Multi-season support
 
 ---
 
