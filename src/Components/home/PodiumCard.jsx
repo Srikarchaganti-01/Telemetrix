@@ -11,7 +11,6 @@ function PodiumCard() {
       try {
         const scheduleData = await getData("schedule");
 
-        // latest completed race
         const latestRace = scheduleData
           .filter((race) => race.status === true)
           .sort((a, b) => Number(a.roundNo) - Number(b.roundNo))
@@ -21,7 +20,6 @@ function PodiumCard() {
         console.log(latestRace);
         const podiumNames = [latestRace.p1, latestRace.p2, latestRace.p3];
         // console.log(podiumNames);
-        // fetch driver details by name (since schedule stores names)
         const positions = await Promise.all(
           podiumNames.map(async (driverName) => {
             if (!driverName) return null;

@@ -1,4 +1,3 @@
-// src/Components/LogoutButton.jsx
 import React, { useState } from "react";
 import { account } from "../../lib/appwrite";
 

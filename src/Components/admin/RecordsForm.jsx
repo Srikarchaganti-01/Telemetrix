@@ -13,7 +13,6 @@ function RecordsForm() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
-  // Replace these IDs later
   const recordIds = {
     "DHL Fastest Lap": "6a44f1530027e7a504c9",
     "Driver_id Of The Day": "6a44f0ff003db308570e",

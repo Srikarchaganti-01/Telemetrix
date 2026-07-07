@@ -37,7 +37,6 @@ function NewsForm() {
         type: formData.type,
       };
 
-      // UPDATE
       if (formData.rowId.trim()) {
         await databases.updateDocument(
           DATABASE_ID,
@@ -47,10 +46,7 @@ function NewsForm() {
         );
 
         setMessage("News updated successfully");
-      }
-
-      // CREATE
-      else {
+      } else {
         await databases.createDocument(
           DATABASE_ID,
           COLLECTION_ID,

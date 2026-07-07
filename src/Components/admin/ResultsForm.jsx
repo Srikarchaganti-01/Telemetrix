@@ -25,7 +25,6 @@ function ResultsForm() {
     setResults(updated);
   };
 
-  // Schedule update function
   const updateSchedule = async (roundNo, results) => {
     try {
       console.log("===== SCHEDULE UPDATE =====");
@@ -87,8 +86,6 @@ function ResultsForm() {
       console.log("Schedule update error:", error);
     }
   };
-
-  // Driver update function
 
   const updateDrivers = async (roundNo, results) => {
     try {
@@ -203,7 +200,6 @@ function ResultsForm() {
     }
   };
 
-  // Team update function
   const updateTeams = async (roundNo, results) => {
     try {
       console.log("===== TEAM UPDATE =====");
@@ -290,13 +286,8 @@ function ResultsForm() {
     }
   };
 
-  // results update function
-
   const updateResults = async (results) => {
     try {
-      console.log("===== RESULTS UPDATE =====");
-
-      // Fetch all result rows
       const resultResponse = await databases.listDocuments(
         DATABASE_ID,
         RESULTS_COLLECTION,
@@ -307,7 +298,6 @@ function ResultsForm() {
       for (const row of results) {
         const position = Number(row.position);
 
-        // Find matching position document
         const resultDoc = resultDocs.find(
           (doc) => Number(doc.pos) === position,
         );
@@ -338,7 +328,6 @@ function ResultsForm() {
       console.log("Result update error:", error);
     }
   };
-  // handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -351,9 +340,9 @@ function ResultsForm() {
     console.log(formData);
 
     await updateResults(results);
-    // await updateDrivers(roundNo, results);
-    // await updateTeams(roundNo, results);
-    // await updateSchedule(roundNo, results);
+    await updateDrivers(roundNo, results);
+    await updateTeams(roundNo, results);
+    await updateSchedule(roundNo, results);
   };
 
   return (
@@ -364,7 +353,6 @@ function ResultsForm() {
         </h2>
 
         <form onSubmit={handleSubmit}>
-          {/* Table Header */}
           <div className="grid grid-cols-4 gap-4 mb-3  font-semibold text-zinc-400 px-10">
             <div>Position</div>
             <div>Driver ID</div>
@@ -372,11 +360,9 @@ function ResultsForm() {
             <div>Points</div>
           </div>
 
-          {/* Rows */}
           <div className="space-y-3 max-h-125 overflow-y-auto p-5">
             {results.map((row, index) => (
               <div key={index} className="grid grid-cols-4 gap-4">
-                {/* Position */}
                 <div>
                   <input
                     type="text"
@@ -386,7 +372,6 @@ function ResultsForm() {
                   />
                 </div>
 
-                {/* Driver ID */}
                 <div>
                   <input
                     type="text"
@@ -400,7 +385,6 @@ function ResultsForm() {
                   />
                 </div>
 
-                {/* Lap Time */}
                 <div>
                   <input
                     type="text"
@@ -414,7 +398,6 @@ function ResultsForm() {
                   />
                 </div>
 
-                {/* Points */}
                 <div>
                   <input
                     type="number"
@@ -431,7 +414,6 @@ function ResultsForm() {
             ))}
           </div>
 
-          {/* Bottom Section */}
           <div className="flex items-center justify-between mt-6 w-fit gap-10">
             <div className="flex items-center gap-3">
               <label className="text-zinc-400 font-medium">Round No</label>

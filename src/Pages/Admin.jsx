@@ -54,7 +54,6 @@ function Admin() {
       <Navbar />
 
       <div className="min-h-screen  m-5">
-        {/* Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center px-10 pt-8">
           <div>
             <h1 className="text-5xl font-semibold tracking-tight text-gray-400 italic">
@@ -71,10 +70,8 @@ function Admin() {
           </div>
         </div>
 
-        {/* Divider */}
         <div className="mx-10 mt-8 h-px bg-zinc-800"></div>
 
-        {/* Main Content */}
         <div className="px-10 py-10 space-y-10">
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
             <div className="bg-zinc-900/60 backdrop-blur-md border border-zinc-800 rounded-3xl  shadow-xl transition-all duration-300  hover:-translate-y-1 p-10">

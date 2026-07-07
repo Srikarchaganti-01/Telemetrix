@@ -169,7 +169,6 @@ function H2H() {
           Compare two F1 drivers head-to-head and see who leads across key stats
           and performance data.
         </div>
-        {/* Inputs */}
 
         <div className="flex justify-end w-full mb-12 pr-20">
           <div className="flex gap-5 w-1/2 justify-end items-center">
@@ -200,8 +199,6 @@ function H2H() {
 
         {selectedDrivers && (
           <>
-            {/* Driver Cards */}
-
             <div className="flex justify-center items-center">
               <div className="flex items-center justify-between gap-8 w-8/10">
                 <DriverCard driver={selectedDrivers.driver1} />
@@ -211,8 +208,6 @@ function H2H() {
                 <DriverCard driver={selectedDrivers.driver2} />
               </div>
             </div>
-
-            {/* Graph */}
 
             <div className="mt-15 rounded-3xl p-8 w-full flex flex-col justify-center items-center ">
               <div className=" w-8/10 mb-15 flex justify-start text-5xl items-center text-gray-400">
