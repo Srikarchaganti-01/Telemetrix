@@ -2,7 +2,6 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { getData } from "../../services/dataService";
 import OptionSlider from "../selector/OptionSlider";
-import chartData from "../../data/chartData";
 import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
