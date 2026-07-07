@@ -30,7 +30,6 @@ function ResultsForm() {
       console.log("===== SCHEDULE UPDATE =====");
       console.log({ roundNo, results });
 
-      // Get schedule for current round
       const scheduleResponse = await databases.listDocuments(
         DATABASE_ID,
         SCHEDULE_COLLECTION,
@@ -44,7 +43,6 @@ function ResultsForm() {
 
       const scheduleDoc = scheduleResponse.documents[0];
 
-      // Fetch all drivers
       const driverResponse = await databases.listDocuments(
         DATABASE_ID,
         DRIVERS_COLLECTION,
@@ -52,14 +50,12 @@ function ResultsForm() {
 
       const drivers = driverResponse.documents;
 
-      // Create quick lookup map
       const driverMap = {};
 
       drivers.forEach((driver) => {
         driverMap[driver.shortName] = driver;
       });
 
-      // Get podium positions
       const p1Driver = driverMap[results[0]?.driverId];
       const p2Driver = driverMap[results[1]?.driverId];
       const p3Driver = driverMap[results[2]?.driverId];
@@ -92,7 +88,6 @@ function ResultsForm() {
       console.log("===== DRIVER UPDATE =====");
       console.log({ roundNo, results });
 
-      // Fetch all drivers
       const driverResponse = await databases.listDocuments(
         DATABASE_ID,
         DRIVERS_COLLECTION,
@@ -100,14 +95,12 @@ function ResultsForm() {
 
       const drivers = driverResponse.documents;
 
-      // shortName -> driver map
       const driverMap = {};
 
       drivers.forEach((driver) => {
         driverMap[driver.shortName] = driver;
       });
 
-      // Process each submitted result
       for (const r of results) {
         const driver = driverMap[r.driverId];
 
@@ -121,12 +114,10 @@ function ResultsForm() {
         const isDNF = r.lapTime.trim().toUpperCase() === "DNF";
 
         const updateData = {
-          // Points
           Spts: (driver.Spts || 0) + points,
           Sgppts: (driver.Sgppts || 0) + points,
           Cpts: (driver.Cpts || 0) + points,
 
-          // Existing values by default
           Sgp: driver.Sgp || 0,
           Cgp: driver.Cgp || 0,
           Sdnf: driver.Sdnf || 0,
@@ -137,7 +128,6 @@ function ResultsForm() {
           Cwins: driver.Cwins || 0,
         };
 
-        // GP / DNF logic
         if (isDNF) {
           updateData.Sdnf += 1;
           updateData.Cdnf += 1;
@@ -146,14 +136,10 @@ function ResultsForm() {
           updateData.Sgp += 1;
           updateData.Cgp += 1;
         }
-
-        // Podium logic
         if (position <= 3) {
           updateData.Spodiums += 1;
           updateData.Cpod += 1;
         }
-
-        // Win logic
         if (position === 1) {
           updateData.Swins += 1;
           updateData.Cwins += 1;
@@ -168,18 +154,15 @@ function ResultsForm() {
           updateData,
         );
       }
-      // Fetch updated drivers again for standings calculation
       const refreshedDrivers = await databases.listDocuments(
         DATABASE_ID,
         DRIVERS_COLLECTION,
       );
 
-      // Sort by season points descending
       const sortedDrivers = [...refreshedDrivers.documents].sort(
         (a, b) => b.Spts - a.Spts,
       );
 
-      // Assign championship positions
       for (let i = 0; i < sortedDrivers.length; i++) {
         const driver = sortedDrivers[i];
 
@@ -205,7 +188,6 @@ function ResultsForm() {
       console.log("===== TEAM UPDATE =====");
       console.log({ roundNo, results });
 
-      // Fetch teams
       const teamResponse = await databases.listDocuments(
         DATABASE_ID,
         TEAMS_COLLECTION,
@@ -213,7 +195,6 @@ function ResultsForm() {
 
       const teams = teamResponse.documents;
 
-      // Build driver → team map
       const teamMap = {};
 
       teams.forEach((team) => {
@@ -221,7 +202,6 @@ function ResultsForm() {
         if (team.sd2) teamMap[team.sd2] = team;
       });
 
-      // Track updates per team
       const updates = {};
 
       const isPodium = (pos) => pos >= 1 && pos <= 3;
@@ -245,27 +225,22 @@ function ResultsForm() {
           };
         }
 
-        // add points
         updates[teamId].Spts += points;
 
-        // win logic
         if (r.position === 1) {
           updates[teamId]._winsThisRace += 1;
         }
 
-        // podium logic
         if (isPodium(r.position)) {
           updates[teamId]._podiumsThisRace += 1;
         }
       });
 
-      // apply limits (max 2 per race)
       Object.values(updates).forEach((t) => {
         t.Swins += Math.min(t._winsThisRace, 2);
         t.Spodiums += Math.min(t._podiumsThisRace, 2);
       });
 
-      // remove temp fields and update DB
       for (const teamId in updates) {
         const { _winsThisRace, _podiumsThisRace, ...cleanData } =
           updates[teamId];
