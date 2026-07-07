@@ -171,29 +171,35 @@ function H2H() {
         </div>
 
         <div className="flex justify-end w-full mb-12 pr-20">
-          <div className="flex gap-5 w-1/2 justify-end items-center">
-            <input
-              type="number"
-              placeholder="Driver : 1"
-              value={driver1No}
-              onChange={(e) => setDriver1No(e.target.value)}
-              className="w-26 ring-5 ring-gray-600/30 rounded-xl p-4  text-sm outline-none focus:outline-none focus:ring-5 focus:ring-[#030112]"
-            />
+          <div className="flex flex-col items-end w-1/2">
+            <div className="flex gap-5 justify-end items-center">
+              <input
+                type="number"
+                placeholder="Driver : 1"
+                value={driver1No}
+                onChange={(e) => setDriver1No(e.target.value)}
+                className="w-26 ring-5 ring-gray-600/30 rounded-xl p-4 text-sm outline-none focus:outline-none focus:ring-5 focus:ring-[#030112]"
+              />
 
-            <input
-              type="number"
-              placeholder="Driver : 2"
-              value={driver2No}
-              onChange={(e) => setDriver2No(e.target.value)}
-              className="w-26 ring-5 ring-gray-600/30 rounded-xl p-4 text-sm  outline-none focus:outline-none focus:ring-5 focus:ring-[#030112]"
-            />
+              <input
+                type="number"
+                placeholder="Driver : 2"
+                value={driver2No}
+                onChange={(e) => setDriver2No(e.target.value)}
+                className="w-26 ring-5 ring-gray-600/30 rounded-xl p-4 text-sm outline-none focus:outline-none focus:ring-5 focus:ring-[#030112]"
+              />
 
-            <button
-              onClick={handleSubmit}
-              className="bg-red-950 px-8 w-30 h-15 rounded-xl flex items-center justify-center text-gray-300 hover:bg-red-900"
-            >
-              H2H
-            </button>
+              <button
+                onClick={handleSubmit}
+                className="bg-red-950 px-8 w-30 h-15 rounded-xl flex items-center justify-center text-gray-300 hover:bg-red-900"
+              >
+                H2H
+              </button>
+            </div>
+
+            <p className="mt-2 text-xs italic text-gray-500">
+              Enter the driver numbers to compare their Head-to-Head Statistics.
+            </p>
           </div>
         </div>
 
