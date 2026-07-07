@@ -53,8 +53,8 @@ function Footer() {
         </div>
       </div>
 
-      <div className="mt-20">
-        <h1 className="text-5xl font-extrabold ">The Official F1</h1>
+      <div className="mt-10">
+        <h1 className="text-4xl font-extrabold ">The Official F1</h1>
         <div className="text-4xl mt-5">
           <a
             href="https://www.youtube.com/F1"
