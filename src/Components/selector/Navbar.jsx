@@ -10,7 +10,7 @@ function Navbar() {
       </h1>
 
       <ul className="flex gap-8 text-medium">
-        <NavLink
+        {/* <NavLink
           to="/"
           className={({ isActive }) =>
             isActive
@@ -19,7 +19,7 @@ function Navbar() {
           }
         >
           Home
-        </NavLink>
+        </NavLink> */}
 
         <NavLink
           to="/schedule"

@@ -6,6 +6,7 @@ const DATABASE_ID = import.meta.env.VITE_APPWRITE_DATABASE_ID;
 const SCHEDULE_COLLECTION = "schedule";
 const DRIVERS_COLLECTION = "drivers";
 const TEAMS_COLLECTION = "teams";
+const RESULTS_COLLECTION = "session_results";
 
 function ResultsForm() {
   const [roundNo, setRoundNo] = useState("");
@@ -289,6 +290,54 @@ function ResultsForm() {
     }
   };
 
+  // results update function
+
+  const updateResults = async (results) => {
+    try {
+      console.log("===== RESULTS UPDATE =====");
+
+      // Fetch all result rows
+      const resultResponse = await databases.listDocuments(
+        DATABASE_ID,
+        RESULTS_COLLECTION,
+      );
+
+      const resultDocs = resultResponse.documents;
+      console.log(resultDocs);
+      for (const row of results) {
+        const position = Number(row.position);
+
+        // Find matching position document
+        const resultDoc = resultDocs.find(
+          (doc) => Number(doc.pos) === position,
+        );
+
+        if (!resultDoc) {
+          console.log(`Position ${position} not found`);
+          continue;
+        }
+
+        const updateData = {
+          driver_id: row.driverId,
+          time: row.lapTime,
+          points: Number(row.points),
+        };
+
+        console.log(`Updating P${position}:`, updateData);
+
+        await databases.updateDocument(
+          DATABASE_ID,
+          RESULTS_COLLECTION,
+          resultDoc.$id,
+          updateData,
+        );
+      }
+
+      console.log("RESULT UPDATE COMPLETE");
+    } catch (error) {
+      console.log("Result update error:", error);
+    }
+  };
   // handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -301,9 +350,10 @@ function ResultsForm() {
     console.log("===== HANDLE SUBMIT =====");
     console.log(formData);
 
-    await updateDrivers(roundNo, results);
-    await updateTeams(roundNo, results);
-    await updateSchedule(roundNo, results);
+    await updateResults(results);
+    // await updateDrivers(roundNo, results);
+    // await updateTeams(roundNo, results);
+    // await updateSchedule(roundNo, results);
   };
 
   return (
@@ -398,7 +448,7 @@ function ResultsForm() {
 
             <button
               type="submit"
-              className="bg-red-950 hover:bg-red-900 px-6 py-2 rounded-lg text-gray-400 font-medium transition"
+              className="bg-red-950 hover:bg-red-900 focus:bg-green-950 px-6 py-2 rounded-lg text-gray-400 font-medium transition"
             >
               Update Results
             </button>

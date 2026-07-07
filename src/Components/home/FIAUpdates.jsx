@@ -30,7 +30,7 @@ function FIAUpdates() {
 
     const interval = setInterval(() => {
       setCurrentNews((prev) => (prev === news.length - 1 ? 0 : prev + 1));
-    }, 5000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [paused, news]);

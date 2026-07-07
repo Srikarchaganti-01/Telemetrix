@@ -1,6 +1,7 @@
 import React from "react";
 function RaceCard({ race }) {
   const state = race.status;
+  console.log(race.raceImg);
   return (
     <div className="w-full h-70  rounded-2xl overflow-hidden flex shadow-lg hover:scale-[1.02] transition-all duration-300  items-center justify-center ">
       <div className="w-[55%] shadow-2xl  h-[80%]">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import black_logo from "../../Assets/logo_black.jpg";
+const black_logo = "/Assets/logo_black.jpg";
 
 const MESSAGES = [
   "Loading telemetry...",

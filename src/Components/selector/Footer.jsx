@@ -1,6 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faYoutube,
+  faInstagram,
+  faXTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 function Footer() {
   return (
     <footer className="bg-[#1c1c24] text-gray-400   px-8 py-8 mt-10">
@@ -55,7 +61,7 @@ function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i className="fa-brands fa-youtube"></i>
+            <FontAwesomeIcon icon={faYoutube} />
           </a>
 
           <a
@@ -63,11 +69,11 @@ function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i className="fa-brands fa-instagram"></i>
+            <FontAwesomeIcon icon={faInstagram} />
           </a>
 
           <a href="https://x.com/f1" target="_blank" rel="noopener noreferrer">
-            <i className="fa-brands fa-x-twitter"></i>
+            <FontAwesomeIcon icon={faXTwitter} />
           </a>
         </div>
       </div>
