@@ -79,9 +79,11 @@ function Navbar() {
         <NavLink
           to="/admin"
           className={({ isActive }) =>
-            isActive
-              ? "text-[#E10600] border-b-2 border-[#E10600] pb-1"
-              : "text-white hover:text-[#E10600]"
+            `hidden md:block ${
+              isActive
+                ? "text-[#E10600] border-b-2 border-[#E10600] pb-1"
+                : "text-white hover:text-[#E10600]"
+            }`
           }
         >
           Admin
