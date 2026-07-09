@@ -113,9 +113,11 @@ function SeasonStats() {
   };
 
   return (
-    <div className="bg-[#15151e] p-6 rounded-xl max-h-150 mb-30">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="font-orbitron text-6xl">Season Stats</h1>
+    <div className="bg-[#15151e] p-4 md:p-6 rounded-xl mb-20 mx-4 md:mx-10 lg:mx-20">
+      <div className="flex flex-col md:flex-row justify-between md:items-center gap-4 mb-6">
+        <h1 className="font-orbitron text-3xl md:text-4xl lg:text-6xl">
+          Season Stats
+        </h1>
         <OptionSlider
           options={options}
           selected={selected}

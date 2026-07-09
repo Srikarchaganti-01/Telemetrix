@@ -4,12 +4,12 @@ import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav className="bg-[#030112] text-gray-400  px-8 py-4 mb-5 flex items-center justify-between border-red-700 sticky top-0 z-50  ">
-      <h1 className="italic text-2xl font-semibold text-red-600 ">
+    <nav className="bg-[#030112] text-gray-400 px-4 md:px-6 lg:px-8 py-4 mb-5 flex items-center justify-center lg:justify-between sticky top-0 z-50 ">
+      <h1 className="hidden lg:block italic text-2xl font-semibold text-red-600 ">
         <Link to="/">TelemetriX </Link>
       </h1>
 
-      <ul className="flex gap-8 text-medium">
+      <ul className="flex gap-3 sm:gap-5 md:gap-6 lg:gap-8 text-sm md:text-base whitespace-nowrap">
         {/* <NavLink
           to="/"
           className={({ isActive }) =>

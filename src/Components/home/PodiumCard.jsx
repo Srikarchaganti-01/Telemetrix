@@ -53,23 +53,25 @@ function PodiumCard() {
   if (!podium) return <div>Loading...</div>;
 
   return (
-    <div className="bg-[#15151e] text-gray-400 rounded-xl p-6 ml-20 mr-20">
-      <h1 className="font-orbitron text-red-900 text-4xl mb-6 italic font-semibold">
+    <div className="bg-[#15151e] text-gray-400 rounded-xl p-5 md:p-6 mx-4 md:mx-10 lg:mx-20">
+      <h1 className="font-orbitron text-red-900 text-2xl md:text-3xl lg:text-4xl mb-6 italic font-semibold">
         Latest Podium Finish
       </h1>
 
-      <div className="flex justify-between m-5 gap-3 h-full">
-        <div className="w-1/3 min-h-full flex flex-col items-start p-10">
-          <h1 className="text-4xl text-red-900 font-medium italic">
+      <div className="flex flex-col lg:flex-row gap-8">
+        <div className="w-full lg:w-1/3 flex flex-col items-start p-4 md:p-8">
+          <h1 className="text-2xl md:text-3xl text-red-900 font-medium italic">
             Round no : {podium.raceid}
           </h1>
 
-          <h1 className="text-3xl">Country : {podium.country}</h1>
-          <h1 className="text-xl">Circuit Name : {podium.circuit}</h1>
+          <h1 className="text-xl md:text-2xl">Country : {podium.country}</h1>
+          <h1 className="text-lg md:text-xl">
+            Circuit Name : {podium.circuit}
+          </h1>
           <h1>Duration : {podium.duration}</h1>
         </div>
 
-        <div className="w-2/3 min-h-full flex justify-center p-10 items-center gap-10">
+        <div className="w-full lg:w-2/3 flex flex-wrap justify-center items-center gap-6 p-4 md:p-8">
           {podium.positions.map((driver, index) => (
             <div
               key={driver.id}
