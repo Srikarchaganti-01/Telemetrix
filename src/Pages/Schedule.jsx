@@ -32,7 +32,7 @@ function Schedule() {
   return (
     <>
       <Navbar />
-      <div className="text-4xl ml-10 mb-5 mt-10">
+      <div className="text-2xl lg:text-4xl ml-10 my-5">
         2026 FIA Formula One World Championship™{" "}
       </div>
 
