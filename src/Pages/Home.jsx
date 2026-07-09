@@ -28,12 +28,12 @@ function Home() {
         <div className="text-4xl ml-10 my-5">
           2026 FIA Formula One World Championship™
         </div>
-        <div className="flex gap=5 h-[70vh] justify-between mb-10">
-          <div className="w-3/5 min-h-fit ">
+        <div className="flex flex-col lg:flex-row gap-5 justify-between mb-10">
+          <div className="w-full lg:w-3/5 ">
             <Hero />
           </div>
 
-          <div className="w-2/5 min-h-fit mr-5">
+          <div className="w-full lg:w-2/5 lg:mr-5">
             <FIAUpdates />
           </div>
         </div>
