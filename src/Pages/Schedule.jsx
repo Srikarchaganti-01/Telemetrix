@@ -49,7 +49,7 @@ function Schedule() {
           />
         </div>
 
-        <div className="mt-6  w-full grid grid-cols-2  gap-5  ">
+        <div className="mt-6  w-full grid grid-cols-1  gap-5 lg:grid-cols-2  ">
           {filteredRaces.map((race) => (
             <RaceCard key={race.roundNo} race={race} />
           ))}

@@ -50,7 +50,7 @@ function StandingCard({ data, type }) {
               </div>
 
               <div className="flex gap-10 items-center">
-                <div className="mt-4 flex">
+                <div className="mt-4 hidden lg:flex">
                   <p className="font-extralight italic text-gray-500">
                     {data.driver1}{" "}
                   </p>
@@ -61,8 +61,10 @@ function StandingCard({ data, type }) {
                 </div>
                 <div className="text-2xl mt-2">|</div>
                 <div className="flex gap-6 mt-4">
-                  <p>Wins: {data.Swins}</p>
-                  <p>Podiums: {data.Spodiums}</p>
+                  <p className="hidden lg:block sm:block">Wins: {data.Swins}</p>
+                  <p className="hidden lg:block sm:block">
+                    Podiums: {data.Spodiums}
+                  </p>
                   <p>Pts: {data.Spts}</p>
                 </div>
               </div>

@@ -19,7 +19,7 @@ function RecordCard({ record }) {
   return (
     <div className="w-full">
       <div
-        className="w-full h-100 flex flex-col items-start
+        className="w-full h-150 lg:h-100 flex flex-col items-start
       justify-evenly rounded-4xl ring-5 ring-gray-600/30 p-5"
       >
         <div className="w-full flex justify-center items-center h-7/10  rounded-3xl">

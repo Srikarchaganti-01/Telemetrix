@@ -91,19 +91,19 @@ function Hero() {
           </div>
         </div>
 
-        <div className="w-full lg:w-1/2  h-full flex flex-col justify-between items-start gap-5 flex-1">
+        <div className="w-full lg:w-1/2   h-full flex flex-col justify-between items-start gap-5 flex-1">
           <div className="grayscale bg-center bg-cover ">
             <img
               src={nextRace.race_track}
               alt={nextRace.gpName}
-              className="w-full h-full object-contain rounded-4xl"
+              className="w-full h-full object-contain rounded-4xl "
             />
           </div>
-          <div className="min-h-2/5 w-full  flex flex-col items-start justify-between">
-            <h1 className="text-red-900 text-3xl">
+          <div className="min-h-2/5 w-full  flex flex-col items-start justify-between ">
+            <h1 className="text-red-900 lg:text-3xl text-6xl mb-5 lg:mb-0">
               Round no : {nextRace.roundNo}
             </h1>
-            <div className="flex flex-col gap-1 text-base text-gray-400">
+            <div className="flex flex-col gap-1 lg:text-base text-gray-400 text-3xl mb-10 lg:mb-0">
               <h2>{nextRace.duration}</h2>
               <h2>Country : {nextRace.country}</h2>
               <h2>Circuit length : {nextRace.circuitLength} Km</h2>

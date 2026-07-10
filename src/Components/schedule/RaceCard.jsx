@@ -4,11 +4,11 @@ function RaceCard({ race }) {
   console.log(race.raceImg);
   return (
     <div className="w-full h-70  rounded-2xl overflow-hidden flex shadow-lg hover:scale-[1.02] transition-all duration-300  items-center justify-center ">
-      <div className="w-[55%] shadow-2xl  h-[80%]">
+      <div className=" w-[50%] lg:w-[55%] shadow-2xl  h-[80%]">
         <img
           src={race.raceImg}
           alt={race.name}
-          className={`${race.status ? "grayscale opacity-40" : ""} w-full h-full object-cover rounded-3xl`}
+          className={`${race.status ? "grayscale opacity-40" : ""} w-full h-full object-cover rounded-3xl `}
         />
       </div>
       <div className="flex-1 p-5 flex flex-col justify-evenly h-full">

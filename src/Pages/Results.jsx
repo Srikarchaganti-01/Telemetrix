@@ -52,7 +52,7 @@ function Results() {
         2026 FIA Formula One World Championship™
       </div>
       <div className="text-3xl ml-10 mb-5 text-red-900">Session Results</div>
-      <div className="max-w-full flex flex-1 justify-between gap-20 m-10">
+      <div className="max-w-full flex flex-col justify-between gap-20 m-10 lg:flex-row">
         {records.map((record) => (
           <RecordCard key={record.$id} record={record} />
         ))}
