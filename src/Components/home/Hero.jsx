@@ -52,7 +52,7 @@ function Hero() {
 
           <p className="text-gray-400 text-xl mb-8"> {nextRace.circuitName}</p>
 
-          <div className="flex flex-wrap gap-4 mb-8">
+          <div className=" hidden md:flex flex-wrap gap-4 mb-8 ">
             <div className="bg-zinc-900 p-4 rounded-lg text-center">
               <h2 className="text-3xl font-orbitron">{timeLeft.days}</h2>
               <p className="text-sm text-gray-400">Days</p>
@@ -100,10 +100,10 @@ function Hero() {
             />
           </div>
           <div className="min-h-2/5 w-full  flex flex-col items-start justify-between ">
-            <h1 className="text-red-900 lg:text-3xl text-6xl mb-5 lg:mb-0">
+            <h1 className="text-red-900 lg:text-3xl text-4xl mb-5 lg:mb-0">
               Round no : {nextRace.roundNo}
             </h1>
-            <div className="flex flex-col gap-1 lg:text-base text-gray-400 text-3xl mb-10 lg:mb-0">
+            <div className="flex flex-col gap-1 lg:text-base text-gray-400 text-2xl mb-10 lg:mb-0">
               <h2>{nextRace.duration}</h2>
               <h2>Country : {nextRace.country}</h2>
               <h2>Circuit length : {nextRace.circuitLength} Km</h2>
