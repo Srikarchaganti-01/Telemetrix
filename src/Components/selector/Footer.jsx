@@ -12,11 +12,11 @@ function Footer() {
     <footer className="bg-[#1c1c24] text-gray-400 px-5 md:px-8 py-8 mt-10">
       <div className="flex flex-col lg:flex-row justify-between gap-10">
         <div>
-          <h1 className="hidden lg:block font-orbitron text-3xl text-red-600 italic">
+          <h1 className="hidden lg:block font-orbitron text-3xl text-red-900 italic">
             TelemetriX
           </h1>
 
-          <p className="hidden lg:block font-orbitron text-3xl text-red-600 italic">
+          <p className="hidden lg:block font-orbitron text-2xl text-gray-400 italic max-w-200">
             Formula 1 race intelligence platform with live standings, schedules,
             analytics and race insights.
           </p>
