@@ -46,31 +46,42 @@ function FIAUpdates() {
   }
 
   const item = news[currentNews];
-
+  // console.log(item);
   return (
-    <div
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      className="w-full bg-zinc-900 rounded-xl overflow-hidden shadow-lg min-h-full flex flex-col justify-between flex-1"
+    <a
+      href={item.redirect_url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block w-full h-full"
     >
-      <div className="h-72 bg-black">
-        <img
-          src={item.image}
-          alt={item.title}
-          className="w-full h-full object-cover"
-        />
-      </div>
+      <div
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        className="w-full bg-zinc-900 rounded-xl overflow-hidden shadow-lg min-h-full flex flex-col justify-between flex-1"
+      >
+        <div className="h-72 bg-black">
+          <img
+            src={item.image}
+            alt={item.title}
+            className="w-full h-full object-cover"
+          />
+        </div>
 
-      <div className="p-5">
-        <h2 className=" font-bold mb-2 line-clamp-2">{item.title}</h2>
-        <p className="text-gray-400 text-sm line-clamp-5">{item.description}</p>
-      </div>
+        <div className="p-5">
+          <h2 className=" font-bold mb-2 line-clamp-2">{item.title}</h2>
+          <p className="text-gray-400 text-sm line-clamp-5">
+            {item.description}
+          </p>
+        </div>
 
-      <div className="bg-red-900 px-4 py-3 flex items-center gap-2">
-        <span className="italic font-bold uppercase text-xs">{item.type}</span>
-        <span className="text-sm truncate opacity-90">{item.title}</span>
+        <div className="bg-red-900 px-4 py-3 flex items-center gap-2">
+          <span className="italic font-bold uppercase text-xs">
+            {item.type}
+          </span>
+          <span className="text-sm truncate opacity-90">{item.title}</span>
+        </div>
       </div>
-    </div>
+    </a>
   );
 }
 

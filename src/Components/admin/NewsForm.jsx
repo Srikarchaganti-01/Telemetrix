@@ -11,6 +11,7 @@ function NewsForm() {
     description: "",
     image: "",
     type: "",
+    redirect_url: "",
   });
 
   const [loading, setLoading] = useState(false);
@@ -35,6 +36,7 @@ function NewsForm() {
         description: formData.description,
         image: formData.image,
         type: formData.type,
+        redirect_url: formData.redirect_url,
       };
 
       if (formData.rowId.trim()) {
@@ -62,6 +64,7 @@ function NewsForm() {
           description: "",
           image: "",
           type: "",
+          redirect_url: "",
         });
       }
     } catch (error) {
@@ -115,6 +118,16 @@ function NewsForm() {
             value={formData.image}
             onChange={handleChange}
             placeholder="Image URL"
+            required
+            className="bg-zinc-800 p-3 rounded-lg text-gray-400 outline-none"
+          />
+
+          <input
+            type="text"
+            name="redirect_url"
+            value={formData.redirect_url}
+            onChange={handleChange}
+            placeholder="Redirect URL"
             required
             className="bg-zinc-800 p-3 rounded-lg text-gray-400 outline-none"
           />
